@@ -17,6 +17,7 @@ def load_and_split_data(csv_path):
     df = pd.read_csv(csv_path, 
     header=None,  
     names=column_names)
+    df = df[df['sentiment'] != 'Irrelevant']
     df.dropna(inplace=True)
     df.drop_duplicates(inplace=True)
     

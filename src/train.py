@@ -16,7 +16,7 @@ def train_model(tokenized_datasets, output_dir):
 
     training_args = TrainingArguments(
         output_dir='./models/checkpoints',
-        num_train_epochs=3,
+        num_train_epochs=1,
         per_device_train_batch_size=16,
         per_device_eval_batch_size=64,
         warmup_steps=500,
