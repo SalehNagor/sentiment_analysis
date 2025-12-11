@@ -12,7 +12,7 @@ def train_model(tokenized_datasets, output_dir):
     print("Initializing model and training...")
     os.environ["WANDB_DISABLED"] = "true"
 
-    model = DistilBertForSequenceClassification.from_pretrained("distilbert-base-uncased", num_labels=2)
+    model = DistilBertForSequenceClassification.from_pretrained("distilbert-base-uncased", num_labels=3)
 
     training_args = TrainingArguments(
         output_dir='./models/checkpoints',

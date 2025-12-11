@@ -13,12 +13,15 @@ def clean_text(text):
 
 def load_and_split_data(csv_path):
     print("Loading and cleaning data...")
-    df = pd.read_csv(csv_path)
+    column_names = ['a', 'b', 'sentiment', 'text']
+    df = pd.read_csv(csv_path, 
+    header=None,  
+    names=column_names)
     df.dropna(inplace=True)
     df.drop_duplicates(inplace=True)
     
-    df['review'] = df['review'].apply(clean_text)
-    df['sentiment'] = df['sentiment'].replace({'negative': 0, 'positive': 1})
+    df['text'] = df['text'].apply(clean_text)
+    df['sentiment'] = df['sentiment'].replace({'Negative': 0, 'Neutral': 1, 'Positive': 2})
 
     train_df, temp_df = train_test_split(df, test_size=0.3, random_state=42, stratify=df['sentiment'])
     test_df, val_df = train_test_split(temp_df, test_size=0.5, random_state=42, stratify=temp_df['sentiment'])
@@ -35,7 +38,7 @@ def tokenize_data(train_df, val_df, test_df):
 
     def tokenize_function(examples):
         tokenized_inputs = tokenizer(
-            examples['review'],
+            examples['text'],
             padding="max_length",
             truncation=True,
             max_length=128
