@@ -6,3 +6,6 @@ transformers
 datasets
 beautifulsoup4
 pytest
+fastapi
+uvicorn
+pydantic
