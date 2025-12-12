@@ -34,10 +34,6 @@ def evaluate_model(trainer, test_dataset):
 
     logger.info("Classification report on test set:\n%s", report)
     print("\n--- Classification Report ---")
-<<<<<<< HEAD
-    print(classification_report(labels, predicted_labels, target_names=['Negative','Neutral', 'Positive']))
-=======
     print(report)
 
     return eval_results
->>>>>>> fe1a84967534d89af03504498afc31080ab71d17

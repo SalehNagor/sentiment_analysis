@@ -3,3 +3,24 @@
 2025-12-12 01:32:56,950 - INFO - __main__ - Loading and splitting data from data/twitter_training.csv
 2025-12-12 01:32:58,560 - INFO - __main__ - Tokenizing datasets.
 2025-12-12 01:33:02,311 - INFO - __main__ - Starting model training.
+2025-12-12 02:54:16,028 - INFO - root - Logging configured. Writing to logs\training.log
+2025-12-12 02:54:16,028 - INFO - __main__ - Pipeline started.
+2025-12-12 02:54:16,029 - INFO - __main__ - Loading and splitting data from data/twitter_training.csv
+2025-12-12 02:54:17,567 - INFO - __main__ - Tokenizing datasets.
+2025-12-12 02:54:21,732 - INFO - __main__ - Starting model training.
+2025-12-12 03:03:35,881 - INFO - __main__ - Training completed. Saving tokenizer to ./models/distilbert_finetuned
+2025-12-12 03:03:35,894 - INFO - __main__ - Starting evaluation on test split.
+2025-12-12 03:03:35,894 - INFO - src.evaluate - Running evaluation on test set...
+2025-12-12 03:04:07,444 - INFO - src.evaluate - Test Accuracy: 0.8307
+2025-12-12 03:04:39,054 - INFO - src.evaluate - Classification report on test set:
+              precision    recall  f1-score   support
+
+    Negative       0.84      0.87      0.86      3255
+     Neutral       0.82      0.77      0.79      2656
+    Positive       0.83      0.84      0.83      2957
+
+    accuracy                           0.83      8868
+   macro avg       0.83      0.83      0.83      8868
+weighted avg       0.83      0.83      0.83      8868
+
+2025-12-12 03:04:39,055 - INFO - __main__ - Pipeline execution completed successfully.

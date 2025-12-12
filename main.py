@@ -1,11 +1,10 @@
 import os
 import logging
-
 from src.preprocessing import load_and_split_data, tokenize_data
 from src.train import train_model
 from src.evaluate import evaluate_model
 from src.logging_utils import setup_logging
-
+from src.train_baseline import train_baseline
 
 def main():
     # Configure logging once at startup
@@ -45,8 +44,7 @@ def main():
     logger.info("Pipeline execution completed successfully.")
     print("\nPipeline execution completed successfully!")
     
-    print("baseline--------------------")
-    train_baseline(DATA_PATH)
+  
 
 if __name__ == "__main__":
     main()
