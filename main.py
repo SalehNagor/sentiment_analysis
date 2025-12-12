@@ -13,7 +13,7 @@ def main():
     logger.info("Pipeline started.")
 
     # اسم ملف الداتا داخل مجلد data (مسار نسبي)
-    DATA_PATH = (r"C:\Users\anas2\OneDrive\Desktop\sentiment analysis\sentiment_analysis\data\twitter_training.csv")
+    DATA_PATH = "data/twitter_training.csv"
     MODEL_OUTPUT_DIR = "./models/distilbert_finetuned"
 
     # Check data
