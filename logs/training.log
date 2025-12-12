@@ -24,3 +24,41 @@
 weighted avg       0.83      0.83      0.83      8868
 
 2025-12-12 03:04:39,055 - INFO - __main__ - Pipeline execution completed successfully.
+2025-12-12 04:02:59,923 - INFO - root - Logging configured. Writing to logs\training.log
+2025-12-12 04:02:59,924 - INFO - __main__ - Pipeline started.
+2025-12-12 04:02:59,924 - INFO - __main__ - Loading and splitting data from C:\Users\anas2\OneDrive\Desktop\sentiment analysis\sentiment_analysis\data\twitter_training.csv
+2025-12-12 04:03:01,338 - INFO - __main__ - Tokenizing datasets.
+2025-12-12 04:03:05,366 - INFO - __main__ - Starting model training.
+2025-12-12 04:27:40,050 - INFO - __main__ - Training completed. Saving tokenizer to ./models/distilbert_finetuned
+2025-12-12 04:27:40,061 - INFO - __main__ - Starting evaluation on test split.
+2025-12-12 04:27:40,061 - INFO - src.evaluate - Running evaluation on test set...
+2025-12-12 04:28:05,127 - INFO - src.evaluate - Test Accuracy: 0.9159
+2025-12-12 04:28:30,212 - INFO - src.evaluate - Classification report on test set:
+              precision    recall  f1-score   support
+
+    Negative       0.93      0.92      0.93      3255
+     Neutral       0.92      0.90      0.91      2656
+    Positive       0.90      0.93      0.91      2957
+
+    accuracy                           0.92      8868
+   macro avg       0.92      0.92      0.92      8868
+weighted avg       0.92      0.92      0.92      8868
+
+2025-12-12 04:28:30,213 - INFO - __main__ - Starting model pruning and fine-tuning.
+2025-12-12 04:36:53,381 - INFO - __main__ - Pruning and fine-tuning completed.
+2025-12-12 04:36:53,381 - INFO - __main__ - Starting final evaluation on test split after pruning.
+2025-12-12 04:36:53,381 - INFO - src.evaluate - Running evaluation on test set...
+2025-12-12 04:37:18,419 - INFO - src.evaluate - Test Accuracy: 0.9168
+2025-12-12 04:37:43,442 - INFO - src.evaluate - Classification report on test set:
+              precision    recall  f1-score   support
+
+    Negative       0.91      0.94      0.92      3255
+     Neutral       0.91      0.91      0.91      2656
+    Positive       0.93      0.91      0.92      2957
+
+    accuracy                           0.92      8868
+   macro avg       0.92      0.92      0.92      8868
+weighted avg       0.92      0.92      0.92      8868
+
+2025-12-12 04:37:43,444 - INFO - __main__ - Final evaluation completed.
+2025-12-12 04:37:43,444 - INFO - __main__ - Pipeline execution completed successfully.
