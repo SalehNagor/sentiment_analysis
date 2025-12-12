@@ -5,6 +5,7 @@ from src.train import train_model_before_pruning
 from src.evaluate import evaluate_model
 from src.logging_utils import setup_logging
 from src.train import prune_and_finetune
+from src.train_baseline import train_baseline
 
 def main():
     # Configure logging once at startup
@@ -23,6 +24,11 @@ def main():
             f"File not found: {DATA_PATH}. Please put the csv in 'data' folder."
         )
 
+    #Train baseline model(logistic regression with TF-IDF)
+    logger.info("Training baseline model (Logistic Regression with TF-IDF)...")
+    train_baseline(DATA_PATH)
+    logger.info("Baseline model training completed.")
+
     # 1) Load and split data
     logger.info("Loading and splitting data from %s", DATA_PATH)
     train_df, val_df, test_df = load_and_split_data(DATA_PATH)
@@ -40,8 +46,6 @@ def main():
     # 4) Evaluate on test set
     logger.info("Starting evaluation on test split.")
     evaluate_model(trainer, tokenized_datasets["test"])
-
-   
     
     # 5) Prune and Fine-tune
     logger.info("Starting model pruning and fine-tuning.")

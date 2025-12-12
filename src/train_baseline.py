@@ -1,4 +1,5 @@
 import pandas as pd
+import logging
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import make_pipeline
@@ -6,8 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, classification_report
 from src.preprocessing import clean_text
 
-
-
+logger = logging.getLogger(__name__)
 
 def train_baseline(File_path):
 
@@ -46,4 +46,6 @@ def train_baseline(File_path):
     print(f"Baseline Accuracy: {accuracy_score(y_test, preds):.2f}")
     print("-" * 40)
     print("Detailed Classification Report:")
+    logger.info(classification_report(y_test, preds))
+    print("\n--- Classification Report ---")
     print(classification_report(y_test, preds))
